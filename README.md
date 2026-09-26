@@ -1,6 +1,6 @@
 # Attendance Verification System
 
-## 9. ขั้นตอนการติดตั้งและรันระบบ (Setup & Execution)
+ขั้นตอนการติดตั้งและรันระบบ (Setup & Execution)
 
 1. **สร้างและเปิดใช้งาน Virtual Environment:**
    ```bash
