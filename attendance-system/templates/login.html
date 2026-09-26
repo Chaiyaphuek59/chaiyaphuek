@@ -1,0 +1,26 @@
+{% extends "base.html" %}
+{% block title %}เข้าสู่ระบบ · Attendance Space{% endblock %}
+{% block content %}
+<section class="mx-auto grid max-w-5xl gap-7 lg:grid-cols-2">
+  <div>
+    <p class="mb-1 text-xs font-bold uppercase tracking-[0.2em] text-pine">Student Login</p>
+    <h1 class="text-4xl font-bold sm:text-5xl">เข้าสู่ระบบ</h1>
+    <p class="mt-3 text-slate-600">กรอกรหัสนักศึกษา แล้วสแกนใบหน้าเพื่อยืนยันตัวตน</p>
+    <div class="mt-7 flex gap-1 rounded-md border border-line bg-white p-1 text-sm font-semibold w-fit">
+      <button type="button" class="nav-link active" data-auth-mode="login">เข้าสู่ระบบ</button>
+      <button type="button" class="nav-link" data-auth-mode="register">ลงทะเบียนใหม่</button>
+    </div>
+    <form id="auth-form" class="panel mt-5 grid gap-5 p-6">
+      <label class="font-semibold">รหัสนักศึกษา<input id="auth-student-id" class="field mt-2 font-normal" placeholder="เช่น 6512345678" required autocomplete="username"></label>
+      <label id="name-field" class="hidden font-semibold">ชื่อ-นามสกุล<input id="auth-full-name" class="field mt-2 font-normal" placeholder="เช่น สมหญิง ตั้งใจเรียน"></label>
+      <p class="text-sm text-slate-500" id="auth-hint">ต้องเปิดกล้องและให้ใบหน้าอยู่กลางกรอบก่อนกดปุ่ม</p>
+      <button class="btn btn-primary" type="submit" id="auth-submit"><i data-lucide="scan-face"></i> <span>สแกนใบหน้าและเข้าสู่ระบบ</span></button>
+    </form>
+  </div>
+  <div class="panel p-6">
+    <h2 class="section-title">สแกนใบหน้า</h2>
+    <div class="camera-box mt-5"><video id="camera-preview" class="hidden" autoplay playsinline muted></video><div class="camera-placeholder"><div><i data-lucide="camera" class="mx-auto mb-2 h-9 w-9"></i>ยังไม่ได้เปิดกล้อง</div></div></div>
+    <button id="start-camera" class="btn btn-secondary mt-4 w-full" type="button"><i data-lucide="camera"></i> เปิดกล้อง</button>
+  </div>
+</section>
+{% endblock %}
